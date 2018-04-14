@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DoMobile</string>
+    <string name="launcher_icon_parse">解析</string>
+    <string name="launcher_icon_intput_url">请输入网址</string>
+
+    <string name="exchange_rate_helper">汇率助手</string>
+    <string name="exchange_rate_update">更新</string>
+</resources>

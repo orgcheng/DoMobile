@@ -3,6 +3,7 @@ package com.domobile.demo.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.util.TypedValue;
 import android.webkit.URLUtil;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -47,7 +48,7 @@ public class CommonUtils {
             "Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko)" +
             "Version/10.3 Mobile/14E277 Safari/603.1.30";
 
-    public static String pareHtml(final String url, String html) {
+    public static String pareHtml(Context context, final String url, String html) {
         try {
             long startTime = System.nanoTime();
             Document doc = Jsoup.parse(html);
@@ -61,7 +62,7 @@ public class CommonUtils {
 
             long endTime = System.nanoTime();
             Log.e("DoMobile", String.format(Locale.getDefault(), "解析html耗时：%.1fms%n", (endTime - startTime) / 1e6d));
-
+            Toast.makeText(context, String.format(Locale.getDefault(), "解析html耗时：%.1fms%n", (endTime - startTime) / 1e6d), Toast.LENGTH_SHORT).show();
             if (links == null || links.size() == 0) {
                 return null;
             }
@@ -86,9 +87,11 @@ public class CommonUtils {
 
     public static boolean needUpdateExchangeRate(Context context) {
         String updateDate = getExchangeRateUpdateDate(context);
+        Log.e("DoMobile", "udpateDate = " + updateDate);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDate = sdf.format(new Date(System.currentTimeMillis()));
-        if (currentDate.equals(updateDate)) {
+        Log.e("DoMobile", "currentDate = " + updateDate);
+        if (!currentDate.equals(updateDate)) {
             return true;
         }
         return false;
@@ -105,4 +108,15 @@ public class CommonUtils {
         edit.putString("updateDate", updateDate);
         edit.apply();
     }
+
+    public static int dipToPx(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    public static int pxToDip(Context context, float pxValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / scale + 0.5f);
+    }
+
 }

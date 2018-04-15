@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LauncherIconParseActivity" />
-        <activity android:name=".activity.ExchangeRateHelperActivity" />
+        <activity
+            android:name=".activity.ExchangeRateHelperActivity"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
     </application>
 
 </manifest>

@@ -62,7 +62,7 @@ public class LauncherIconParseActivity extends AppCompatActivity {
                     String html = response.body().string();
                     // Step 3. 解析图片地址，并计算消耗时间
                     // 解析html耗时：218.3ms
-                    String paredUrl = CommonUtils.pareHtml(url, html);
+                    String paredUrl = CommonUtils.pareHtml(LauncherIconParseActivity.this, url, html);
                     if (TextUtils.isEmpty(paredUrl)) {
                         Toast.makeText(LauncherIconParseActivity.this, "网站没有有效图标", Toast.LENGTH_SHORT).show();
                         return;

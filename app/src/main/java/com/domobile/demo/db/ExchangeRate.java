@@ -23,4 +23,7 @@ public class ExchangeRate {
 
     @Ignore
     public double currentValue;
+
+    @Ignore
+    public boolean pressed;
 }

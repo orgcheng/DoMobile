@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="exchange_rate_normal">#aaa</color>
+    <color name="exchange_rate_pressed">#ffb93221</color>
+
+    <color name="exchange_rate_bg_normal">#fff9f9f9</color>
+    <color name="exchange_rate_bg_pressed">#3333B5E5</color>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="exchange_rate" />
+    <item type="id" name="exchange_rate_value" />
+    <item type="id" name="exchange_rate_pressed" />
+</resources>

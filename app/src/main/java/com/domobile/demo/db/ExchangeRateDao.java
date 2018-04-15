@@ -28,7 +28,7 @@ public interface ExchangeRateDao {
 //    void insertExchangeRate(ExchangeRate rate);
 
     @Update(onConflict = REPLACE)
-    void updateExchangeRate(ExchangeRate rate);
+    void updateExchangeRate(List<ExchangeRate> rate);
 
     @Query("DELETE FROM ExchangeRate")
     void deleteAll();

@@ -52,7 +52,13 @@ public class ExchangeRateResultViewModel extends AndroidViewModel {
         ExchangeRateDao exchangeRateDao = mDb.exchangeRateModel();
         exchangeRateDao.insertExchangeRate(rates);
     }
-
+    public void updateRate(List<ExchangeRate> rates) {
+        for (int i = 0; i < rates.size(); i++) {
+            ExchangeRate newRate = rates.get(i);
+            newRate.position = i;
+        }
+        mDb.exchangeRateModel().updateExchangeRate(rates);
+    }
     public void updateRate(List<ExchangeRate> oldRates, List<ExchangeRate> newRates) {
         for (int i = 0; i < newRates.size(); i++) {
             ExchangeRate newRate = newRates.get(i);

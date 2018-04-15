@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/exchange_rate_bg_normal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_country"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="left" />
+
+    <TextView
+        android:id="@+id/tv_exchange_value"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:clickable="true"
+        android:textColor="@color/exchange_rate_normal"
+        android:gravity="center_vertical|right"
+        android:textIsSelectable="false"
+        android:singleLine="true" />
+</LinearLayout>
